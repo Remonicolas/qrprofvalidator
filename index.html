@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QR Validador PROF Seguro -- Prof SeG</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eeeeee;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background: #eeeeee;
+      position: relative;
+      padding: 25px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Logo */
+    .logo {
+      position: absolute;
+      top: 25px;
+      right: 22px;
+      max-width: calc(100% - 44px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .logo-simbolo {
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
+      border-radius: 50%;
+      background: #20a9d8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 22px;
+    }
+
+    /* Contenido central */
+    .contenido {
+      width: 100%;
+      text-align: center;
+      margin-top: 115px;
+    }
+
+    .check {
+      width: 115px;
+      height: 115px;
+      border-radius: 50%;
+      background: #20b65a;
+      margin: 0 auto 28px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      font-size: 68px;
+      font-weight: bold;
+      line-height: 1;
+
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .titulo {
+      font-size: 29px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .subtitulo {
+      font-size: 17px;
+      color: #666;
+      margin-bottom: 38px;
+    }
+
+    /* Datos */
+    .datos {
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      padding: 22px 20px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+
+    .fila {
+      padding: 14px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .fila:last-child {
+      border-bottom: none;
+    }
+
+    .etiqueta {
+      display: block;
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .valor {
+      display: block;
+      font-size: 17px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .estado {
+      color: #18a953;
+    }
+
+    /* Texto inferior */
+    .demo {
+      margin-top: 30px;
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Fecha y hora */
+    .fecha {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    /* Celulares */
+    @media (max-width: 480px) {
+      .logo {
+        right: 15px;
+        max-width: calc(100% - 30px);
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .contenido {
+        margin-top: 105px;
+      }
+
+      .logo {
+        right: 12px;
+        max-width: calc(100% - 24px);
+        font-size: 12px;
+      }
+
+      .logo-simbolo {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+      }
+
+      .check {
+        width: 100px;
+        height: 100px;
+        font-size: 58px;
+      }
+
+      .titulo {
+        font-size: 25px;
+      }
+
+      .subtitulo {
+        font-size: 16px;
+      }
+
+      .datos {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="contenedor">
+
+    <!-- Logo -->
+    <div class="logo">
+      <span>Validador QR Vigencia Seguro -- PROF SEGUROS</span>
+      <span class="logo-simbolo">✓</span>
+    </div>
+
+    <!-- Contenido principal -->
+    <section class="contenido">
+
+      <!-- Check verde -->
+      <div class="check">✓</div>
+
+      <h1 class="titulo">SEGURO VIGENTE</h1>
+
+      <p class="subtitulo">
+        La cobertura se encuentra al día
+      </p>
+
+      <!-- Información -->
+      <div class="datos">
+
+        <div class="fila">
+          <span class="etiqueta">Patente del vehículo</span>
+          <span class="valor">ILY625</span>
+        </div>
+
+        <div class="fila">
+          <span class="etiqueta">Estado del seguro</span>
+          <span class="valor estado">Seguro al día</span>
+        </div>
+
+        <div class="fila">
+          <span class="etiqueta">Medio de pago</span>
+          <span class="valor">Débito automático - Tarjeta Credito</span>
+        </div>
+
+      </div>
+
+      <p class="demo">
+        QR Constancia Valida CR<br><br>
+
+        Prof Grupo Asegurador, Prof Seguros y Plus Art son marcas registradas
+        de Productores de Frutas Argentinas Cooperativa de Seguros Limitada<br>
+
+        Pólizas emitidas por Productores de Frutas Argentinas Cooperativa de
+        Seguros Limitada – CUIT 30-50005918-0<br><br>
+
+        La compañía de seguros dispone de un Servicio de Atención al Asegurado
+        que atenderá las consultas y reclamos que presenten los tomadores de
+        seguros, asegurados, beneficiarios y/o derechohabientes.<br><br>
+
+        El Servicio de Atención al Asegurado está integrado por:<br>
+        RESPONSABLE: Pablo Morales<br>
+        SUPLENTE: Francisco Morales<br>
+        SUPLENTE: Carlos Sosa<br><br>
+
+        En caso de que el reclamo no haya sido resuelto o que haya sido
+        desestimado, total o parcialmente, o que haya sido denegada su
+        admisión, el mismo podrá ser denunciado a la Superintendencia de
+        Seguros de la Nación, a través del sitio web oficial
+        www.argentina.gob.ar/snn
+      </p>
+
+      <!-- Fecha y hora automática -->
+      <p id="fecha" class="fecha"></p>
+
+    </section>
+
+  </main>
+
+  <script>
+    const ahora = new Date();
+
+    const dia = String(ahora.getDate()).padStart(2, '0');
+    const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+    const anio = ahora.getFullYear();
+
+    const hora = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const segundos = String(ahora.getSeconds()).padStart(2, '0');
+
+    document.getElementById("fecha").textContent =
+      `Fecha y hora de consulta: ${dia}/${mes}/${anio} - ${hora}:${minutos}:${segundos}`;
+  </script>
+
+</body>
+</html>
